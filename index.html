@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page opener</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="date" id="date" placeholder="Enter a date to open" required />
+        <input type="text" name="filename" id="filename" placeholder="Enter file name to open" required />
+        <input type="submit" value="Submit" id="submit" />
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const date = document.getElementById('date').value.trim();
+            const filename = document.getElementById('filename').value.trim();
+
+            if (!date || !filename) {
+                alert('Please enter both date and filename.');
+                return;
+            }
+
+            const url = `/${date}/${filename}.html`;
+
+            fetch(url, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = url;
+                    } else {
+                        alert('The requested page does not exist. Please check the date or filename and try again.');
+                    }
+                })
+                .catch(error => {
+                    alert('Error checking the URL. Please try again later.');
+                    console.error('Fetch error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
