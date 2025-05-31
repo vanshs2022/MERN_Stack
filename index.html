@@ -25,19 +25,7 @@
             }
 
             const url = `/${date}/${filename}.html`;
-
-            fetch(url, { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        window.location.href = url;
-                    } else {
-                        alert('The requested page does not exist. Please check the date or filename and try again.');
-                    }
-                })
-                .catch(error => {
-                    alert('Error checking the URL. Please try again later.');
-                    console.error('Fetch error:', error);
-                });
+            window.location.href = url;
         });
     </script>
 </body>
