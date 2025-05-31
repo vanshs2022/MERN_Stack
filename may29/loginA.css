@@ -1,0 +1,57 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('images/image.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'PT Serif', serif;
+}
+
+.login-container {
+  padding: 4rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='email'],
+input[type='password'] {
+  padding: 0.5rem;
+  width: 300px;
+  margin: 0.5rem;
+}
+
+.terms {
+  margin: 0.5rem;
+  color: white;
+}
+
+.terms a {
+  text-decoration: underline;
+  color: white;
+}
+
+button {
+  width: 300px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  background-color: #f8b230;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
